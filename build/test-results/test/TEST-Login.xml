@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Login" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-11-03T07:49:23" hostname="RTWP" time="12.217">
+  <properties/>
+  <testcase name="Login with valid email and password" classname="Login" time="6.642"/>
+  <testcase name="Login with invalid email and password" classname="Login" time="5.574"/>
+  <system-out><![CDATA[
+@login @positive-test
+Scenario: Login with valid email and password  ?[90m# src/test/resources/login.feature:5?[0m
+Before Test
+  ?[32mGiven ?[0m?[32muser is on login page?[0m                  ?[90m# com.riachs.stepDef.loginStepDef.userIsOnLoginPage()?[0m
+  ?[32mAnd ?[0m?[32muser input username with ?[0m?[32m?[1m"standard_user"?[0m ?[90m# com.riachs.stepDef.loginStepDef.userInputUsernameWith(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32muser input password with ?[0m?[32m?[1m"secret_sauce"?[0m  ?[90m# com.riachs.stepDef.loginStepDef.userInputPasswordWith(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32muser click login button?[0m                 ?[90m# com.riachs.stepDef.loginStepDef.userClickLoginButton()?[0m
+  ?[32mThen ?[0m?[32muser is on homepage?[0m                     ?[90m# com.riachs.stepDef.homeStepdef.userIsOnHomepage()?[0m
+After Test
+
+@login @negative-Test
+Scenario: Login with invalid email and password                                                                   ?[90m# src/test/resources/login.feature:13?[0m
+Before Test
+  ?[32mGiven ?[0m?[32muser is on login page?[0m                                                                                     ?[90m# com.riachs.stepDef.loginStepDef.userIsOnLoginPage()?[0m
+  ?[32mAnd ?[0m?[32muser input username with ?[0m?[32m?[1m"standard_user"?[0m                                                                    ?[90m# com.riachs.stepDef.loginStepDef.userInputUsernameWith(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32muser input password with ?[0m?[32m?[1m"invalid"?[0m                                                                          ?[90m# com.riachs.stepDef.loginStepDef.userInputPasswordWith(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32muser click login button?[0m                                                                                    ?[90m# com.riachs.stepDef.loginStepDef.userClickLoginButton()?[0m
+  ?[32mThen ?[0m?[32muser able to see error message ?[0m?[32m?[1m"Epic sadface: Username and password do not match any user in this service"?[0m ?[90m# com.riachs.stepDef.loginStepDef.userAbleToSeeErrorMessage(java.lang.String)?[0m
+After Test
+]]></system-out>
+  <system-err><![CDATA[SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+Nov 03, 2023 2:49:25 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 118, so returning the closest version found: 117
+Nov 03, 2023 2:49:29 PM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+Nov 03, 2023 2:49:30 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 118, so returning the closest version found: 117
+]]></system-err>
+</testsuite>
