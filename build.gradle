@@ -42,7 +42,7 @@ configurations {
 
 def tags = (findProperty('tags') == null) ? 'not @exclude' : findProperty('tags') + ' and not @exclude'
 
-tasks.register('tcucumberWebTest') {
+tasks.register('cucumberWebTest') {
     description("Running Cucumber Web Test")
     dependsOn assemble, compileTestJava
     doLast {
